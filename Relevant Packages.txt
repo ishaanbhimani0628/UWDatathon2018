@@ -1,0 +1,8 @@
+This document acts as both a test for commiting to this repository and to list relevant packages that may be helpful
+in this competition.
+
+Most Relevant Packages to install:
+Numpy
+Pandas
+Matplotlib
+Sklearn (Officially called Sci-kit Learn)
