@@ -16,16 +16,21 @@ import json
 # kickstarter_data.to_csv('kickstarter_dataset_edited.csv')
 
 #Working with the new dataset:
-kickstart_data = pandas.read_csv('kickstarter_dataset_edited.csv')
-#kickstart_data.info()
-null_array = []
-median_usd_pledge = kickstart_data['usd pledged'].median()
-kickstart_data['usd pledged'].fillna(median_usd_pledge, inplace = True)
-games_item = (kickstart_data[kickstart_data.values == 'Games'])
-design_item = (kickstart_data[kickstart_data.values == 'Technology'])
-technology_item = (kickstart_data[kickstart_data.values == 'Design'])
-relevant_cats = pandas.concat([games_item,design_item,technology_item])
-relevant_cats.to_csv('relevant_categories.csv')
+# kickstart_data = pandas.read_csv('kickstarter_dataset_edited.csv')
+# #kickstart_data.info()
+# null_array = []
+# median_usd_pledge = kickstart_data['usd pledged'].median()
+# kickstart_data['usd pledged'].fillna(median_usd_pledge, inplace = True)
+# games_item = (kickstart_data[kickstart_data.values == 'Games'])
+# design_item = (kickstart_data[kickstart_data.values == 'Technology'])
+# technology_item = (kickstart_data[kickstart_data.values == 'Design'])
+# relevant_cats = pandas.concat([games_item,design_item,technology_item])
+# relevant_cats.to_csv('relevant_categories.csv')
+# games_item.to_csv('games.csv')
+# design_item.to_csv('design.csv')
+# technology_item.to_csv('technology.csv')
+
+
 # value_counts = kickstart_data['main_category'].value_counts()
 # total_pledged_categories = {
 #     'Film & Video': 0,
@@ -98,3 +103,12 @@ relevant_cats.to_csv('relevant_categories.csv')
 # #kickstart_data['main_category'].value_counts().to_csv('main_category.csv')
 # #Plot categories vs usd_pledged
 # #Goals vs usd_pledged
+
+games_data = pandas.read_csv('games.csv')
+design_data = pandas.read_csv('design.csv')
+tech_data = pandas.read_csv('technology.csv')
+
+data_array = [games_data, design_data, tech_data]
+for item in data_array:
+    print(item['category'].value_counts())
+    print('   ')
