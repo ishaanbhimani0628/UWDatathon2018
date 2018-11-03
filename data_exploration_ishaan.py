@@ -109,6 +109,14 @@ design_data = pandas.read_csv('design.csv')
 tech_data = pandas.read_csv('technology.csv')
 
 data_array = [games_data, design_data, tech_data]
+data_keys = []
+data_value_counts = []
 for item in data_array:
-    print(item['category'].value_counts())
-    print('   ')
+    value_counts = item['category'].value_counts()
+    data_value_counts.append(value_counts)
+    print(data_value_counts)
+    print(" ")
+    keys = value_counts.keys()
+    data_keys.append(keys)
+
+print(data_keys)
