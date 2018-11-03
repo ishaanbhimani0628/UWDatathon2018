@@ -25,7 +25,7 @@ games_item = (kickstart_data[kickstart_data.values == 'Games'])
 design_item = (kickstart_data[kickstart_data.values == 'Technology'])
 technology_item = (kickstart_data[kickstart_data.values == 'Design'])
 relevant_cats = pandas.concat([games_item,design_item,technology_item])
-
+relevant_cats.to_csv('relevant_categories.csv')
 # value_counts = kickstart_data['main_category'].value_counts()
 # total_pledged_categories = {
 #     'Film & Video': 0,
